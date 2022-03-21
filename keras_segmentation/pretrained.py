@@ -1,4 +1,5 @@
-from tensorflow import keras
+import keras
+import tensorflow as tf
 
 from .models.all_models import model_from_name
 
@@ -59,7 +60,7 @@ def pspnet_101_cityscapes():
 
     model_url = "https://www.dropbox.com/s/" \
                 "c17g94n946tpalb/pspnet101_cityscapes.h5?dl=1"
-    latest_weights = keras.utils.get_file("pspnet101_cityscapes.h5", model_url)
+    latest_weights = tf.keras.utils.get_file("pspnet101_cityscapes.h5", model_url)
 
     return model_from_checkpoint_path(model_config, latest_weights)
 
